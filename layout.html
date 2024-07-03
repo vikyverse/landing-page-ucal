@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fullscreen Columns with Video Background</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100px;
+            background-image: linear-gradient(#0c2897, #ff00);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .navbar img {
+            height: 80px;
+        }
+        .container {
+            display: flex;
+            height: calc(100%); /* Adjust for navbar height */
+            width: 100%;
+            position: absolute;
+/*            top: 50px; /* Height of the navbar */*/
+        }
+        .column {
+            flex: 1;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            transition: flex 0.5s ease-in-out;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            text-align: center;
+        }
+        .column:hover {
+            flex: 4;
+        }
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            display: none;
+        }
+        .column:hover .video-bg {
+            display: block;
+        }
+        .column .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+        }
+        .column:hover .overlay {
+            opacity: 0;
+        }
+        .column-title{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 24px;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+            opacity: 0;
+        }
+        .column-title:hover{
+            opacity: 100;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="ucal_logo.png" alt="Logo">
+    </div>
+    <div class="container">
+        <div class="column" style="background-image: url('automotive.jpg');">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="overlay">Automotive</div>
+            <div class="column-title">Vertical 1</div>
+        </div>
+        <div class="column" style="background-image: url('electronics.jpg');">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="overlay">Electronics</div>
+            <div class="column-title">Vertical 2</div>
+        </div>
+        <div class="column" style="background-image: url('precision.jpg');">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="overlay">Precision Tools</div>
+            <div class="column-title">Vertical 3</div>
+        </div>
+        <div class="column" style="background-image: url('drones.jpg');">
+            <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="overlay">Aerospace Fastners</div>
+            <div class="column-title">Vertical 4</div>
+        </div>
+    </div>
+</body>
+</html>
