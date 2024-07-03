@@ -31,7 +31,7 @@
             height: calc(100%); /* Adjust for navbar height */
             width: 100%;
             position: absolute;
-/*            top: 50px; /* Height of the navbar */*/
+            /*top: 100px;*/ /* Height of the navbar */
         }
         .column {
             flex: 1;
@@ -63,7 +63,7 @@
         .column:hover .video-bg {
             display: block;
         }
-        .column .overlay {
+        .overlay {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -82,7 +82,7 @@
         .column:hover .overlay {
             opacity: 0;
         }
-        .column-title{
+        .column-title {
             position: absolute;
             top: 0;
             bottom: 0;
@@ -90,6 +90,7 @@
             right: 0;
             background: rgba(255, 255, 255, 0.5);
             display: flex;
+            flex-direction: column; /* Change to column layout */
             justify-content: center;
             align-items: center;
             color: white;
@@ -99,9 +100,42 @@
             z-index: 1;
             opacity: 0;
         }
-        .column-title:hover{
-            opacity: 100;
+        .column-title:hover {
+            opacity: 1;
         }
+        .column-title h1 {
+            margin: 0;
+        }
+        .column-title .btn {
+            margin-top: 10px; /* Add some space between the h1 and the button */
+        }
+        .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #362e6c;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background-color: #302670;
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    background-color: #302670;
+    transform: scale(1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
     </style>
 </head>
 <body>
@@ -112,22 +146,34 @@
         <div class="column" style="background-image: url('automotive.jpg');">
             <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="overlay">Automotive</div>
-            <div class="column-title">Vertical 1</div>
+            <div class="column-title">
+                <h1>Ucal Limited</h1>
+                <a href="https://www.ucal.com/" class="btn">Visit website</a>
+            </div>
         </div>
         <div class="column" style="background-image: url('electronics.jpg');">
             <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="overlay">Electronics</div>
-            <div class="column-title">Vertical 2</div>
+            <div class="column-title">
+                <h1>Ucal Electronics</h1>
+                <a href="https://www.ucal.com/" class="btn">Visit website</a>
+            </div>
         </div>
         <div class="column" style="background-image: url('precision.jpg');">
             <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             <div class="overlay">Precision Tools</div>
-            <div class="column-title">Vertical 3</div>
+            <div class="column-title">
+                <h1>Ucal System Inc.</h1>
+                <a href="https://ucalsystems.com/" class="btn">Visit website</a>
+            </div>
         </div>
-        <div class="column" style="background-image: url('drones.jpg');">
+        <div class="column" style="background-image: url('aerospace.jpg');">
             <iframe class="video-bg" src="https://www.youtube.com/embed/cU_oqnu_kfM?autoplay=1&controls=0&mute=1&loop=1&playlist=cU_oqnu_kfM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            <div class="overlay">Aerospace Fastners</div>
-            <div class="column-title">Vertical 4</div>
+            <div class="overlay">Aerospace Fasteners</div>
+            <div class="column-title">
+                <h1>Jayasuriya Aerospace Fasteners</h1>
+                <a href="https://www.jayasuriya.org/" class="btn">Visit website</a>
+            </div>
         </div>
     </div>
 </body>
